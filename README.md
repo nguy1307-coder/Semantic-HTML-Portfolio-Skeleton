@@ -11,4 +11,7 @@ This repository has been deployed on Netlify
 
 ## Notes
 Contact and other details are placeholders to keep personal information off this
-public repository.
+public repository. 
+
+## Disclaimer: AI Usage
+Copilot was used in the css file 

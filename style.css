@@ -34,11 +34,11 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-}
-nav ul li {
-    display: inline-block;
-}
 
 nav ul li a {
     color: var(--secondary-bg);  
@@ -50,8 +50,10 @@ nav ul li a:hover {
     color: var(--primary-text);
 }
 #projects article {
-    margin-bottom: var(--standard-gap);
-    padding: var(--standard-gap);
+    background: var(--secondary-bg);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
 }
 main {
     margin: 0 var(--standard-gap);
@@ -88,15 +90,167 @@ p {
 #logo img:hover {
     transform: scale(1.1);
 }
-#projects article h3 {
-    font-size: 2em;
+
+#projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
 }
+
+/*<I need a Seamless and detailed responsive design breakpoints that requires more than three @media queries. do I currently meet that requirement with what I have right now? @media (min-width: 600px) {    #projects {        grid-template-columns: repeat(2, 1fr);    }    #projects h2 {        grid-column: span 2;    }}@media (min-width: 1000px) {    #projects {        grid-template-columns: repeat(3, 1fr);    }    #projects h2 {        grid-column: span 3;    }    #projects article h3 {        font-size: 2em;    }}
+footer {
+    text-align: center;    font-size: 0.8em;    padding: 1rem 0;}@media (min-width: 1400px) {    main {        max-width: 1200px;        margin: 0 auto;    }}
+
+No, not quite if the requirement is "seamless and detailed responsive design breakpoints" and especially if the expectation is that it often requires more than three media queries.
+
+Right now you have 3 breakpoints:
+@media (min-width: 600px)
+@media (min-width: 1000px)
+@media (min-width: 1400px)
+
+That's a good start, but it's fairly coarse. The layout jumps:
+
+Mobile → 2 columns at 600px
+2 columns → 3 columns at 1000px
+Max-width constraint at 1400px
+
+A reviewer looking for advanced responsive design would likely expect more refinement across tablets, laptops, desktops, and very large screens.
+
+What you currently demonstrate
+
+✅ Mobile-first design
+
+✅ CSS Grid responsiveness
+
+✅ Content reflow from 1 → 2 → 3 columns
+
+✅ Large-screen optimization
+
+What's missing for a stronger "exceptional work" level
+
+Consider adding breakpoints like:
+Small tablets 
+@media (min-width: 480px) {
+    body {
+        font-size: 1.05rem;
+    }
+}
+
+Tablets 
+@media (min-width: 768px) {
+    #projects {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+Small laptops 
+@media (min-width: 1024px) {
+    #projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+ Large desktops 
+@media (min-width: 1440px) {
+    main {
+        max-width: 1200px;
+    }
+}
+
+ Ultra-wide displays 
+@media (min-width: 1800px) {
+    main {
+        max-width: 1500px;
+    }
+
+    #projects {
+        gap: 3rem;
+    }
+}
+Seamless and detailed responsive design breakpoints
+
+then adding a fourth breakpoint such as:
+@media (min-width: 784px) {
+    nav ul li a {
+        padding: 1rem 3rem;
+    }
+}
+would strengthen your submission.
+
+Bottom line: ✅ You meet the assignment requirements as written. Whether it's considered "exceptional" depends mostly on your overall visual design and whether you've documented AI usage correctly. 
+
+This gives 5 responsive breakpoints, which is closer to what instructors usually mean by "detailed responsive design."
+
+Even better: combine breakpoints with fluid sizing
+
+Advanced responsive design isn't just adding media queries. It also uses: h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+#projects {
+    gap: clamp(1rem, 2vw, 2.5rem);
+} Using clamp() reduces the need for excessive breakpoints because typography and spacing scale smoothly between screen sizes.
+
+My assessment
+
+If I were grading against the requirement:
+
+Responsive: ✅ Yes
+
+Uses media queries: ✅ Yes
+
+More than three breakpoints: ❌ Not currently (you have exactly three)
+
+Seamless and detailed responsiveness: ⚠️ Partially. The grid adapts, but typography, spacing, navigation, images, and component sizing do not appear to have responsive adjustments.
+
+I'd rate the current responsiveness around 7/10. Adding 2 to 4 more well-placed breakpoints and using clamp() for font sizes and spacing would push it into the advanced/exceptional category.*/
+
+/*phones*/
+@media (min-width: 600px) {
+    #projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #projects h2 {
+        grid-column: span 2;
+    }
+}
+/*tablet*/
+@media (min-width: 800px) {
+    #projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #projects h2 {
+        grid-column: span 3;
+    }
+}
+/*laptop*/
+@media (min-width: 1000px) {
+    #projects {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #projects h2 {
+        grid-column: span 4;
+    }
+    #projects article h3 {
+        font-size: 2em;
+    }
+}
+/*Desktops*/
+@media (min-width: 1400px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
 footer {
 
     text-align: center;
     font-size: 0.8em;
     padding: 1rem 0;
 }
+
 #contact a {
     color: var(--highlights);
 }
