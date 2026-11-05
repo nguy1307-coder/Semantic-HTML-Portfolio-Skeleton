@@ -41,17 +41,17 @@ nav ul {
 
 
 nav ul li a {
-    color: var(--primary-bg);  
+    color: var(--primary-bg); 
     padding: 1rem 2rem;
     display: inline-block;  
 }
 nav ul li a:hover {
     background: var(--secondary);  
-    color: var(--primary-text);
+    color: var(#F0F4F8);
 }
 #projects article {
     background: var(--secondary-bg);
-    color: var(--primary-bg);
+    color: var(#F0F4F8);
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
@@ -234,6 +234,7 @@ I'd rate the current responsiveness around 7/10. Adding 2 to 4 more well-placed 
         grid-column: span 4;
     }
     #projects article h3 {
+        color: #F0F4F8; 
         font-size: 2em;
     }
 }
