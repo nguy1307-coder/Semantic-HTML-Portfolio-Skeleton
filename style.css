@@ -4,12 +4,12 @@
     font-weight: 100 900;
     font-style: normal;
 }
-:root{
-    --primary-bg: #C8AB83;
-    --secondary-bg: #8D6B94;
-    --primary-text: #170A1C;
-    --secondary: #7FBEEB;
-    --highlights:#587D71;
+:root {
+    --primary-bg: #D6EEFF;
+    --secondary-bg: #37505C;
+    --primary-text: #360A14;
+    --secondary: #A5243D;
+    --highlights: #B48291;
     --standard-gap: 40px;
 }
 body{
@@ -41,7 +41,7 @@ nav ul {
 
 
 nav ul li a {
-    color: var(--secondary-bg);  
+    color: var(--primary-bg);  
     padding: 1rem 2rem;
     display: inline-block;  
 }
@@ -51,6 +51,7 @@ nav ul li a:hover {
 }
 #projects article {
     background: var(--secondary-bg);
+    color: var(--primary-bg);
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
@@ -252,7 +253,7 @@ footer {
 }
 
 #contact a {
-    color: var(--highlights);
+    color: var(--primary-text);
 }
 #contact a:hover {
     color: var(--secondary);
