@@ -1,0 +1,23 @@
+# Accessibility Audit & Fixes
+
+This document outlines the accessibility findings for the portfolio website and the specific fixes applied to meet WCAG (Web Content Accessibility Guidelines) standards.
+
+## 1. Image Elements Do Not Have [alt] Attributes
+**Finding:** Automated accessibility tools flagged that two images of my drawings did not have an alternate description for whenever the image failed to load. 
+
+**Cause:** I did have alt descriptions written, but due to a slight syntax mistake, the browser could not read them. I had accidentally combined the `width` attribute and the `alt` attribute into a single broken string.
+
+**Original Broken Code:**
+<img src="six-months-drawing.png" width="300 alt=" my most recent drawing, still in progress">
+<img src="Month_one_drawing.png" width="300 alt=" one="" of="" the="" drawings="" i="" did="" within="" first="" month"="">
+I fixed the syntax by properly closing the width attribute with a quote and separating it from the alt attribute so screen readers can parse the description correctly:
+
+**Revised Code:**
+<img src="six-months-drawing.png" width="300" alt="My most recent drawing, still in progress">
+<img src="Month_one_drawing.png" width="300" alt="One of the drawings I did within my first month">
+
+## 2. Background and foreground colors do not have a sufficient contrast ratio.
+**Cause** My website had color contrast issues, particularly with the text inside my project cards, making it difficult to read against the dark background.
+
+Fix Applied: I updated my CSS color variables to create a more consistent color palette with better contrast. I also added a separate CSS rule for the project card headings so they would use a lighter color. This improved readability while keeping the colors consistent throughout the website
+
