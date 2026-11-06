@@ -56,6 +56,9 @@ nav ul li a:hover {
     margin-bottom: 1rem;
     border-radius: 10px;
 }
+#projects article h3 {
+    color: #F0F4F8;
+}
 main {
     margin: 0 var(--standard-gap);
 }
@@ -234,7 +237,6 @@ I'd rate the current responsiveness around 7/10. Adding 2 to 4 more well-placed 
         grid-column: span 4;
     }
     #projects article h3 {
-        color: #F0F4F8; 
         font-size: 2em;
     }
 }
