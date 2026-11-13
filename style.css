@@ -261,3 +261,19 @@ footer {
 #contact a:hover {
     color: var(--secondary);
 }
+body.dark-mode {
+    --primary-bg: #1a1518;
+    --primary-text: #e8dcd0;
+    --secondary-bg: #3a2e3b;
+    --secondary: #5b87a8;
+    --highlights: #8fa395;
+}
+
+body.dark-mode nav ul li a {
+    color: var(--primary-bg);
+}
+
+body.dark-mode nav ul li a:hover {
+    background: var(--primary-text);
+    color: var(--primary-bg);
+}
