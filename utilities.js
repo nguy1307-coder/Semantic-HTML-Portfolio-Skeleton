@@ -7,3 +7,4 @@ function displaylight(){
         btn.textContent = "☀️";
     }    
 }
+ScrollReveal().reveal('.site',{delay:1000});
